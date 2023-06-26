@@ -79,9 +79,9 @@ slides =
     , FirstGlance
     , WhatAreWeThinking
     , Syntax
+    , Break
     , RandomLine
     , ListNames
-    , Break
     , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
     , ImportantLines
     , DecisionSummary

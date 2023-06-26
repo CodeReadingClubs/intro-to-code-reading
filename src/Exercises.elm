@@ -238,8 +238,8 @@ sectionIntroFromSection section =
         ListNames ->
             [ slideHeading2 "If you ask 2 developers to name a thing, there is only a 7% chance they come up with the same name."
             , slideP "Dror Fietelson - \"How developers choose names\""
-            , item (img [ src "elm-anxious.jpg", style "height" "250px" ] [])
-            , item (img [ src "react-anxious.jpg", style "height" "250px" ] [])
+            , item (img [ src "/elm-anxious.jpg", style "height" "250px" ] [])
+            , item (img [ src "/react-anxious.jpg", style "height" "250px" ] [])
             ]
 
         RandomLine ->
@@ -492,7 +492,7 @@ slideContent section =
             , ( True
               , slideHeadingFromSection section
                     ++ [ container (div [])
-                            [ timedHeading "5" "Together" "Discuss"
+                            [ timedHeading "5" "Everyone" "Share 1 thing"
                             , slideP ""
                             , slideHeading3 "Share our expectations for the session"
                             , item (img [ src "react-huffy.jpg", style "height" "250px" ] [])
@@ -572,18 +572,16 @@ slideContent section =
         SessionEnd { codeDescription, codeLink } ->
             [ ( False
               , slideHeadingFromSection section
-                    ++ [ slideP "Code used for this session..."
-                       , bullets
-                            [ bulletLink codeDescription codeLink
-                            ]
-                       , slideHeading2 "Any questions?"
-                       , slideHeading2 "Next steps"
+                    ++ [ slideHeading2 "Any questions?"
+                       , slideP "Get in touch - email: hello@codereading.club | twitter: @codereadingclub"
+                       , slideHeading2 "Continue with Code Reading!"
                        , bullets
                             [ bullet "Code reading club resources: https://codereading.club"
                             , bullet "Read Felienne's book! The Programmer's Brain"
                             , bullet "Start a club"
                             , bullet "Join a club"
-                            , bullet "Get in touch - email: hello@codereading.club | twitter: @codereadingclub"
+                            , bullet "Join our discord"
+                            , bullet "Apply practices to onboarding or as interview tool"
                             ]
                        ]
               )
@@ -605,7 +603,7 @@ slideContent section =
               )
             , ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "8" "Together" "Discuss"
+                    ++ [ timedHeading "2" "3 People" "Share your first, second & why"
                        , slideP "It might be tempting for some people to start talking about the big picture, but for this exercise we focus on the details we notice, rather than attempt to summarise."
                        , slideHeading3 "Talk about why things might have jumped out for different people."
                        , bullets
@@ -625,9 +623,12 @@ slideContent section =
             [ ( True
               , slideHeadingFromSection section
                     ++ [ slideP "The goal of this exercise is to practice to make sure everyone in club is familiar with syntactic elements of the code."
-                       , timedHeading "5" "Independently" "Examine syntax"
-                       , slideP "Look at the code and examine syntactic elements. Do you know the meaning of all elements?"
-                       , slideP "You can use these questions as a guide:"
+                       , timedHeading "4" "Independently" "Examine syntax"
+                       , bullets
+                            [ bulletLink "Code in the annotation tool" syntaxAnnotate
+                            , bulletLink "Code pdf" syntaxPdf
+                            ]
+                       , slideP "Look at the code and examine syntactic elements. Do you know the meaning of all elements? You can use these questions as a guide:"
                        , bullets
                             [ bullet "Is it clear to you what the role of each block in the code is (function, condition, repetition etc)?"
                             , bullet "Do you recognize all operators?"
@@ -637,7 +638,7 @@ slideContent section =
               )
             , ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "5" "Together" "Discuss"
+                    ++ [ timedHeading "4" "5 people" "Say one line & syntax question"
                        , slideP "Talk about unfamiliar constructs."
                        , slideP "Were there constructs that were unfamiliar?"
                        , bullets
@@ -654,12 +655,12 @@ slideContent section =
             [ sectionIntro section
             , ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "10" "Independently" "Examine structure"
+                    ++ [ timedHeading "5" "Independently" "Examine structure"
                        , slideP "Highlight the places where things are defined a draw links to where they are used. Use different colours. There is no \"right\" way to do this excercise. Use your insticts to explore how the pieces of code flow."
                        , bullets
-                            [ bulletLink "Code to annotate" annotationLink
+                            [ bulletLink "Code to annotate" glanceAndAnnotateAnnotate
                             , if String.length pdfLink > 0 then
-                                bulletLink "Code pdf to download" pdfLink
+                                bulletLink "Code pdf to download" glanceAndAnnotatePdf
 
                               else
                                 item (text "")
@@ -674,7 +675,7 @@ slideContent section =
               )
             , ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "5" "One person" "Present"
+                    ++ [ timedHeading "2" "One person" "Present"
                        , slideHeading3 "Share your annotations"
                        , slideHeading3 "Talk through your process and what you discovered"
                        ]
@@ -699,39 +700,26 @@ slideContent section =
             , ( True
               , slideHeadingFromSection section
                     ++ [ timedHeading "5" "In Pairs" "Identify things that are named"
+                       , bullets
+                            [ bulletLink "Code in the annotation tool" namesAnnotate
+                            , bulletLink "Code pdf" namesPdf
+                            ]
                        , slideP "Use the annotation tool to highlight names. This is one method for discovering how the code fits together and its intentions."
                        ]
               )
             , ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "5" "Together" "List names on the Jamboard"
-                       , slideHeading3 "Some people add names"
-                       , bullets [ bullet "Use a single text box for each name" ]
-                       , slideHeading3 "Other people start grouping and de-duping"
-                       , bullets
-                            [ bullet "Pull together in clusters and label the group with a sticky note"
-                            , bullet "No rules here - so if you want to include a name in another cluster, re-dupe!"
-                            ]
-                       ]
-              )
-            , ( True
-              , slideHeadingFromSection section
                     ++ [ timedHeading "5" "Together" "What can we learn from these names?"
-                       , slideHeading3 "Continue adding thoughts on sticky notes while we talk"
+                       , slideHeading3 "Identify patterns"
+                       , bullets
+                            [ bullet "Are there names that are ambiguous when looked at without context?"
+                            , bullet "Are there any conventions followed or not followed with the naming?"
+                            ]
+                       , slideHeading3 "Talk about meaning"
                        , bullets
                             [ bullet "Which come from the domain?"
                             , bullet "Which come from constructs / concepts in programming?"
                             , bullet "Which elements are related to each other, from the names only?"
-                            ]
-                       ]
-              )
-            , ( True
-              , slideHeadingFromSection section
-                    ++ [ timedHeading "5" "Together" "Identify patterns"
-                       , slideHeading3 "Talk about molds"
-                       , bullets
-                            [ bullet "Are there names that are ambiguous when looked at without context?"
-                            , bullet "Are there any conventions followed or not followed with the naming?"
                             ]
                        ]
               )
@@ -740,8 +728,12 @@ slideContent section =
         RandomLine ->
             [ ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "5" "Independently" "Examine the line"
-                       , slideP "Select a random line from the code in whatever way you like. It can be helpful to randomly pick 3 line numbers and have the facilitator choose from them, which they think will be most interesting to talk about; but surprisingly, even a blank line can generate some conversation!"
+                    ++ [ timedHeading "3" "Independently" "Examine the line"
+                       , bullets
+                            [ bulletLink "Code in the annotation tool" randomAnnotate
+                            , bulletLink "Code pdf" randomPdf
+                            ]
+                       , slideP "Select a random line. It can be helpful to randomly pick 3 line numbers and have the facilitator choose from them, which they think will be most interesting to talk about; but surprisingly, even a blank line can generate some conversation!"
                        , slideP "Debugging often starts with a line number."
                        , slideP "Start by looking at the line itself, then think about how it relates to the code around it."
                        , bullets
@@ -753,13 +745,13 @@ slideContent section =
               )
             , ( True
               , [ slideHeading "The Line in Context"
-                , timedHeading "8" "Together" "Discuss"
+                , timedHeading "5" "Everyone" "Discuss"
                 , bullets
                     [ bullet "What is the 'scope' of the random line?"
                     , bullet "What part of the code was seen as related?"
                     , bullet "How does the line fit into the rest of the code base?"
                     ]
-                , slideP "Take turns in the group, and let every member talk about the code for 30 seconds (could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore or we run out of time.."
+                , slideP "Take turns in the group, and let every member talk about the code for 30 seconds (could also be one sentence each). Try to add new information and not repeat things that have been said, and repeat until people do not know new things anymore or we run out of time."
                 ]
               )
             ]
@@ -768,7 +760,7 @@ slideContent section =
             [ sectionIntro section
             , ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "5" "Independently" "Identify important lines"
+                    ++ [ timedHeading "4" "Independently" "Identify important lines"
                        , bullets
                             [ bullet "Identify the 4 lines you consider most important"
                             , bullet "List your 4 line numbers together"
@@ -778,18 +770,12 @@ slideContent section =
               )
             , ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "2" "Together" "Look at the code"
+                    ++ [ timedHeading "2" "Everyone together" "List line numbers chosen"
                        , slideHeading3 "Get a sense of"
                        , bullets
                             [ bullet "lines covered by many people?"
                             , bullet "lines named but not by a lot of people"
                             ]
-                       ]
-              )
-            , ( True
-              , slideHeadingFromSection section
-                    ++ [ timedHeading "5" "One person" "Present"
-                       , slideHeading3 "Talk through your 4 line choices"
                        ]
               )
             , ( True
@@ -865,7 +851,7 @@ slideContent section =
         DecisionsMade ->
             [ ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "5" "Independently" "Consider code choices"
+                    ++ [ timedHeading "2" "Independently" "Consider code choices"
                        , slideP "Reexamine the code snippet and list decisions of the creator(s) of the code, for example a decision to use a certain design pattern or use a certain library or API."
                        , bullets
                             [ bullet "Try not to judge the decisions as good or bad"
@@ -933,19 +919,11 @@ slideContent section =
                 ]
                     ++ [ slideHeading2 "Looking at a piece of code again"
                        , slideHeading3 "Consider code choices"
+                       , slideP "Try not to judge the decisions as good or bad"
                        , slideHeading3 "Consider the consequences"
                        , slideP "Consider the impact of the decisions on e.g. readability, performance, extendability"
                        , slideHeading3 "Consider potential reasons"
                        , slideP "Can you understand why the code might have been designed this way?"
-                       ]
-              )
-            , ( True
-              , [ decisionsConsequencesWhy
-                , styledSeparator
-                ]
-                    ++ [ timedHeading "5" "Together" "Step 1 - Identify decisions"
-                       , slideP "Try not to judge the decisions as good or bad"
-                       , slideP "Focus on what decisions the developer(s) had to make, not why they made them"
                        ]
               )
             ]
