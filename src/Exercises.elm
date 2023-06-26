@@ -1029,9 +1029,7 @@ paddedSlide ( showStopwatch, content ) =
                         item (img [ src "icon.png", class "stopwatch" ] [])
                    , item
                         (div [ class "footer" ]
-                            [ text ""
-
-                            -- TODO publish slides
+                            [ text "Slides for this workshop: https://intro-to-code-reading-club.netlify.app"
                             ]
                         )
                    ]
