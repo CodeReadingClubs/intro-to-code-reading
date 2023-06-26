@@ -1,0 +1,148 @@
+:root {
+  --dark3: #49306b;
+  --light: #f6f4d2;
+  --orange: #ee964b;
+  --yellow: #f4d35e;
+  --teal: #28afb0;
+  --dark: #1f271b;
+  --dark2: #19647e;
+  --background: #f3f3f3;
+}
+
+body {
+  background-color: var(--background);
+  font-family: sans-serif;
+  font-size: 1.25em;
+}
+
+body > div {
+  background-color: var(--background) !important;
+}
+
+a {
+  border-bottom: solid 2px var(--orange);
+  border-left: solid 10px var(--teal);
+  color: var(--dark);
+  padding-left: 10px;
+}
+
+.slides a {
+  border-left: solid 20px var(--teal);
+}
+
+a:hover {
+  background-color: darken(#e4dfda, 10);
+  color: darken(var(--dark), 15);
+}
+
+a:visited {
+  color: var(--dark);
+}
+
+h1,
+h2 {
+  color: var(--dark);
+}
+
+h1 {
+  font-size: 4rem;
+  font-family: 'Ubuntu Mono', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  min-height: 130px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+
+hr {
+  background-color: var(--teal);
+}
+
+.separator {
+  border: 3px solid var(--teal);
+  border-radius: 2px;
+}
+
+h2 span.who {
+  background-color: var(--yellow);
+  border-radius: 8px;
+  border: 2px solid var(--dark2);
+  color: var(--dark2);
+  float: right;
+  font-size: 0.6em;
+  padding: 3px 5px;
+  margin: 0 10px 0 30px;
+}
+
+span.time {
+  float: right;
+  font-size: 0.7em;
+}
+
+.stopwatch {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  border: 5px dashed var(--orange);
+  padding: 10px;
+  background: var(--yellow);
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.stopwatch  span {
+  font-size: 24px;
+}
+
+.stopwatch button {
+  background-color: var(--orange);
+  border: none;
+  border-radius: 100px;
+  display: block;
+  font-size: 18px;
+  margin: 10px auto;
+  padding: 5px 10px;
+}
+
+.stopwatch button:active,
+.stopwatch button:focus {
+  outline: none;
+}
+
+.slides {
+  padding: 2rem 4rem;
+}
+
+.slides li {
+  padding-bottom: 10px;
+  list-style: none;
+}
+
+.slides  img {
+  padding-right: 0.5rem;
+}
+
+.footer {
+  font-size: 0.8em;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.syntax-highlight {
+  background-color: var(--teal);
+  border-radius: 0.5rem;
+  line-height: 1.2;
+  margin: -0.2rem;
+  margin-left: 1ch;
+  padding: 0.2rem;
+}
+
+.paragraph {
+  max-width: 90%;
+}

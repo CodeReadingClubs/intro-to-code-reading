@@ -1,0 +1,6 @@
+Introduction to the reasons & research behind Code Reading Club
+Explore our different perspectives on seeing a piece of code for the first time
+Start using strategies to approach code that we’ve never seen before
+Discuss the benefits of these techniques & next steps
+
+
