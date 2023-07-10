@@ -8,6 +8,14 @@ import SliceShow.Content exposing (..)
 import SliceShow.Slide exposing (..)
 
 
+codeAnnotationLink =
+    "https://annotate.codereading.club/#/file/MIewJgpgShCGYEsB2BzYAbArgIwM4HoZcRMAnAYwgO3RG3wFYBmcgJgAYAOATkqYEYA7ADNh2AGzYALP06cpYLmDDlBrWNlhNIcCJ3wBlAC6xSRiKQDSCI4aq4EIJFIC0sJGBfYIATydh8cnAIF1wkBAAHCIgjAnRkKgARCCDSWCNHJFwAOljA4NyADyMgA"
+
+
+codePdf =
+    "/intro-code.pdf"
+
+
 glanceAndAnnotateAnnotate =
     "https://annotate.codereading.club/#/file/M4Sw5gdghgNlAO8D0Blc0YFoQHkVICMYB7AwgNgA4ATSqAZgGNKBGAFgHYAzAUwICYC5AJw8Obfiyjl+AVnIAGSozZsCwyuVn9U6WEmAAnRkgCyxajxjAkABQAWxCDwByAVwC2BHoYBqsEGooABdiQwA6YAB3EC5go"
 
@@ -214,9 +222,9 @@ sectionIntroFromSection section =
             [ slideP "The goal of this exercise is to practice to get a first impression of code and act upon that."
             , slideP "We all have different instincts and strategies for where to start when faced with a new piece of code."
                 |> hide
-            , bulletLink "Code in the annotation tool" glanceAndAnnotateAnnotate
+            , bulletLink "Code in the annotation tool" codeAnnotationLink
                 |> hide
-            , bulletLink "Code pdf" glanceAndAnnotatePdf
+            , bulletLink "Code pdf" codePdf
                 |> hide
             , slideP "It doesn't matter how trivial you think the first and second things you noticed are."
                 |> hide
@@ -298,7 +306,7 @@ slideContent section =
                        , slideP "hello@codereading.club | https://codereading.club"
                        , slideHr
                        , bullets
-                            [ bulletLink "Code of conduct" "https://codereading.club/conduct"
+                            [ bulletLink "Code of conduct" "https://codereading.club/code-of-conduct"
                             , bulletLink "Group workspace" groupWorkspaceLink
                             , bulletLink "Code in annotation tool" annotationLink
                             , if String.length pdfLink > 0 then
@@ -340,8 +348,8 @@ slideContent section =
                 , styledSeparator
                 , slideHeading3 "What is Code Reading Club?"
                 , bullets
-                    [ bulletLink "Code of conduct" "https://codereading.club/conduct"
-                    , bullet "codereading.club/conduct"
+                    [ bulletLink "Code of conduct" "https://codereading.club/code-of-conduct"
+                    , bullet "codereading.club/code-of-conduct"
                     , bullet ""
                     , bulletLink "Group workspace" groupWorkspaceLink
                     , bullet ""
@@ -377,9 +385,9 @@ slideContent section =
                 , slideHeading2 "The plan" |> hide
                 , bullets
                     [ bullet "1. What is Code Reading Club?"
-                    , bullet "2. The foundations of Code Reading Club"
+                    , bullet "2. First glance at the code"
                     , bullet "3. Why are we here?"
-                    , bullet "4. Exercise tasters (with break)"
+                    , bullet "4. Four exercises (with break)"
                     , bullet "5. Questions & Answers"
                     ]
                     |> hide
@@ -391,8 +399,8 @@ slideContent section =
                 , styledSeparator
                 , slideHeading3 "What is Code Reading Club?"
                 , bullets
-                    [ bulletLink "Code of conduct" "https://codereading.club/conduct"
-                    , bullet "https://codereading.club/conduct"
+                    [ bulletLink "Code of conduct" "https://codereading.club/code-of-conduct"
+                    , bullet "https://codereading.club/code-of-conduct"
                     , bullet ""
                     , bulletLink "Code pdf tool" "https://pdf.codereading.club"
                     , bullet "https://pdf.codereading.club"
@@ -401,11 +409,6 @@ slideContent section =
                     , bullet "https://annotate.codereading.club"
                     , bullet ""
                     , bullet "Discord community & github (@CodeReadingClubs) with resources"
-                    , if String.length pdfLink > 0 then
-                        bulletLink "Example annotation" pdfLink
-
-                      else
-                        item (text "")
                     ]
                 ]
               )
@@ -603,7 +606,7 @@ slideContent section =
               )
             , ( True
               , slideHeadingFromSection section
-                    ++ [ timedHeading "2" "3 People" "Share your first, second & why"
+                    ++ [ timedHeading "5" "Together" "Share your first, second & why"
                        , slideP "It might be tempting for some people to start talking about the big picture, but for this exercise we focus on the details we notice, rather than attempt to summarise."
                        , slideHeading3 "Talk about why things might have jumped out for different people."
                        , bullets
@@ -701,10 +704,10 @@ slideContent section =
               , slideHeadingFromSection section
                     ++ [ timedHeading "5" "In Pairs" "Identify things that are named"
                        , bullets
-                            [ bulletLink "Code in the annotation tool" namesAnnotate
-                            , bulletLink "Code pdf" namesPdf
+                            [ bulletLink "Code in the annotation tool" codeAnnotationLink
+                            , bulletLink "Code pdf" codePdf
                             ]
-                       , slideP "Use the annotation tool to highlight names. This is one method for discovering how the code fits together and its intentions."
+                       , slideP "Use paper & pen, or the annotation tool, to highlight names. This is one method for discovering how the code fits together and its intentions."
                        ]
               )
             , ( True
@@ -730,8 +733,8 @@ slideContent section =
               , slideHeadingFromSection section
                     ++ [ timedHeading "3" "Independently" "Examine the line"
                        , bullets
-                            [ bulletLink "Code in the annotation tool" randomAnnotate
-                            , bulletLink "Code pdf" randomPdf
+                            [ bulletLink "Code in the annotation tool" codeAnnotationLink
+                            , bulletLink "Code pdf" codePdf
                             ]
                        , slideP "Select a random line. It can be helpful to randomly pick 3 line numbers and have the facilitator choose from them, which they think will be most interesting to talk about; but surprisingly, even a blank line can generate some conversation!"
                        , slideP "Debugging often starts with a line number."
@@ -1029,7 +1032,7 @@ paddedSlide ( showStopwatch, content ) =
                         item (img [ src "icon.png", class "stopwatch" ] [])
                    , item
                         (div [ class "footer" ]
-                            [ text "Slides for this workshop: https://intro-to-code-reading-club.netlify.app"
+                            [ text "Slides for this workshop: https://codereadingclub.netlify.app"
                             ]
                         )
                    ]

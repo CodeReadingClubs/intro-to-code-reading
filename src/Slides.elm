@@ -24,7 +24,7 @@ To generate a link, go to <https://annotate.codereading.club>
 annotationLink : String
 annotationLink =
     -- e.g. "https://annotate.code-reading.org/#/file/LYewXglgNlCGD0BzApgYwNYgLQBNkDd4AjKEI+HARgAYB2I1ADlmVh1ScoDYjZGBWVEQBMlVJVhdYE2OJwAWZADMAnEuIAnEAHcAzsg3xQOAK5Rku+ABEIu1CHwGAngDoAVruBA"
-    ""
+    "https://annotate.codereading.club/#/file/MIewJgpgShCGYEsB2BzYAbArgIwM4HoZcRMAnAYwgO3RG3wFYBmcgJgAYAOATkqYEYA7ADNh2AGzYALP06cpYLmDDlBrWNlhNIcCJ3wBlAC6xSRiKQDSCI4aq4EIJFIC0sJGBfYIATydh8cnAIF1wkBAAHCIgjAnRkKgARCCDSWCNHJFwAOljA4NyADyMgA"
 
 
 {-| A link for a shared workspace for your session
@@ -41,7 +41,7 @@ Leave empty if you don't need downloadable pdf
 -}
 pdfLink : String
 pdfLink =
-    ""
+    "/intro-code.pdf"
 
 
 {-| What the code is
@@ -49,7 +49,7 @@ pdfLink =
 codeDescription : String
 codeDescription =
     -- e.g. "Firefox browser module Discovery.jsm"
-    ""
+    "VS Code line decorations overlay in typescript"
 
 
 {-| A link to the code in repo
@@ -57,7 +57,7 @@ codeDescription =
 codeLink : String
 codeLink =
     -- e.g. "https://github.com/mozilla/gecko-dev/blob/d107bc8aeadcc816ba85cb21c1a6a1aac1d4ef9f/browser/modules/Discovery.jsm"
-    ""
+    "https://github.com/microsoft/vscode/blob/5150ef0ce77ef5516e55af4b8272f25907b55953/src/vs/editor/browser/viewParts/linesDecorations/linesDecorations.ts"
 
 
 {-| The list of slides to use for this session
@@ -75,13 +75,11 @@ slides =
         , annotationLink = annotationLink
         , pdfLink = pdfLink
         }
-    , WhyCodeReading
     , FirstGlance
     , WhatAreWeThinking
-    , Syntax
-    , Break
     , RandomLine
     , ListNames
+    , Break
     , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
     , ImportantLines
     , DecisionSummary
