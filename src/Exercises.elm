@@ -575,14 +575,17 @@ slideContent section =
         SessionEnd { codeDescription, codeLink } ->
             [ ( False
               , slideHeadingFromSection section
-                    ++ [ slideHeading2 "Any questions?"
+                    ++ [ slideP "Code used for this session..."
+                       , bullets
+                            [ bulletLink codeDescription codeLink
+                            ]
+                       , slideHeading2 "Any questions?"
                        , slideP "Get in touch - email: hello@codereading.club | twitter: @codereadingclub"
                        , slideHeading2 "Continue with Code Reading!"
                        , bullets
                             [ bullet "Code reading club resources: https://codereading.club"
                             , bullet "Read Felienne's book! The Programmer's Brain"
-                            , bullet "Start a club"
-                            , bullet "Join a club"
+                            , bullet "Start a club or Join a club"
                             , bullet "Join our discord"
                             , bullet "Apply practices to onboarding or as interview tool"
                             ]
