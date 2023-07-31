@@ -33,7 +33,7 @@ e.g. miro, jamboard
 groupWorkspaceLink : String
 groupWorkspaceLink =
     -- e.g. "https://miro.com/welcomeonboard/dlVRdlJVSk5EVlFBazdBV0hUdHc1aVZ6SDJVVHlhTEdZcGhQdERIUXF5WHhJa29FQUhWMHdnNHk2RXhscHBKZnwzMDc0NDU3MzQ5MTgyMDYwNDgy?invite_link_id=406316329300"
-    ""
+    "https://jamboard.google.com/d/18ENY4nyu3zOy6piDNXfse-wGeXi7PrtRCylRHn4gEDM/edit?usp=sharing"
 
 
 {-| A link to download pdf of your code
@@ -75,14 +75,14 @@ slides =
         , annotationLink = annotationLink
         , pdfLink = pdfLink
         }
-    , FirstGlance
-    , WhatAreWeThinking
     , RandomLine
-    , ListNames
-    , Break
+    , SecondThoughts
     , AnnotateStructure { annotationLink = annotationLink, pdfLink = "" }
-    , ImportantLines
-    , DecisionSummary
+    , RecapStructure importantLinesFromPrevious
+    , Break
+    , DecisionsMade
+    , DecisionsConsequences
+    , DecisionsWhy
     , SessionEnd
         { codeDescription = codeDescription
         , codeLink = codeLink
@@ -157,7 +157,7 @@ firstLookSlides =
 -}
 importantLinesFromPrevious : List Int
 importantLinesFromPrevious =
-    [ 13, 34, 59, 89 ]
+    []
 
 
 {-| Example list of sections for a second session on a piece of code

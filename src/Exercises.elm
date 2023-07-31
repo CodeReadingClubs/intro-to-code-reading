@@ -385,9 +385,9 @@ slideContent section =
                 , slideHeading2 "The plan" |> hide
                 , bullets
                     [ bullet "1. What is Code Reading Club?"
-                    , bullet "2. First glance at the code"
-                    , bullet "3. Why are we here?"
-                    , bullet "4. Four exercises (with break)"
+                    , bullet "2. A look at a random line"
+                    , bullet "3. Questions & second thoughts"
+                    , bullet "4. Recap what we know, take a break, think about decisions together."
                     , bullet "5. Questions & Answers"
                     ]
                     |> hide
